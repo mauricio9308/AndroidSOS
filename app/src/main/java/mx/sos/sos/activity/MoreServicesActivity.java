@@ -7,17 +7,19 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import mx.sos.sos.R;
-import mx.sos.sos.adapter.ServiceUserAdapter;
+import mx.sos.sos.fragment.ServiceUsersFragment;
 import mx.sos.sos.model.ServiceUser;
 
-public class MoreServicesActivity extends AppCompatActivity implements ServiceUserAdapter.AdapterCallback{
+public class MoreServicesActivity extends AppCompatActivity implements ServiceUsersFragment.Callback{
 
+    /* frag tag for the services list */
+    private static final String FRAG_TAG_SERVICE_LIST = "FRAG_TAG_SERVICE_LIST";
+
+    /* extra for the service id reference */
     public static final String EXTRA_SERVICE_ID = "EXTRA_SERVICE_ID";
 
     private static final int NOT_SET = -1;
@@ -27,9 +29,7 @@ public class MoreServicesActivity extends AppCompatActivity implements ServiceUs
     public static final int SERVICE_HEALTH = 3;
     public static final int SERVICE_CAR = 4;
 
-    private RecyclerView mRecyclerView;
     private int mServiceId;
-    private ServiceUserAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,24 +49,14 @@ public class MoreServicesActivity extends AppCompatActivity implements ServiceUs
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayShowTitleEnabled(true);
 
-        /* setting up the recycler view */
-        mRecyclerView = ( RecyclerView) findViewById( R.id.recycler_view_more );
-
-        /* setting the layout manager */
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager( MoreServicesActivity.this /* context */);
-        mRecyclerView.setLayoutManager( linearLayoutManager );
-
-        /* setting the adapter */
-        mAdapter = new ServiceUserAdapter( new ServiceUser[]{
-                new ServiceUser("User 1", "Merida Calle 2 por 1 y 4 #12", 1, "100$-200$" ),
-                new ServiceUser("User 1", "Merida Calle 2 por 1 y 4 #12", 1, "100$-200$" ),
-                new ServiceUser("User 1", "Merida Calle 2 por 1 y 4 #12", 1, "100$-200$" ),
-                new ServiceUser("User 1", "Merida Calle 2 por 1 y 4 #12", 1, "100$-200$" ),
-                new ServiceUser("User 1", "Merida Calle 2 por 1 y 4 #12", 1, "100$-200$" ),
-                new ServiceUser("User 1", "Merida Calle 2 por 1 y 4 #12", 1, "100$-200$" ),
-                new ServiceUser("User 1", "Merida Calle 2 por 1 y 4 #12", 1, "100$-200$" )
-        }, MoreServicesActivity.this /* adapter callback */);
-        mRecyclerView.setAdapter(  mAdapter  );
+        if( savedInstanceState == null ){
+            /* we set the fragment */
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add( R.id.container_services_list,
+                            ServiceUsersFragment.newInstance(mServiceId), FRAG_TAG_SERVICE_LIST)
+                    .commit();
+        }
     }
 
     private int getExtraServiceId(){

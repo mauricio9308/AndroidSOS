@@ -1,20 +1,29 @@
 package mx.sos.sos.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by mauriciolara on 11/21/15.
  */
 public class ServiceUser {
-    
+
+    @SerializedName("id")
+    private long mId;
+
+    @SerializedName("name")
     private String mName;
+
+    @SerializedName("adress")
     private String mAddress;
+
+    @SerializedName("phone")
+    private String mPhone;
+
     private int mStars;
     private String mPriceRange;
 
-    public ServiceUser(String name, String address, int stars, String priceRange ) {
-        mName = name;
-        mAddress = address;
-        mStars = stars;
-        mPriceRange = priceRange;
+    public long getId(){
+        return mId;
     }
 
     public String getName() {
@@ -31,5 +40,9 @@ public class ServiceUser {
 
     public String getPriceRange(){
         return mPriceRange;
+    }
+
+    public String getPhone(){
+        return mPhone;
     }
 }

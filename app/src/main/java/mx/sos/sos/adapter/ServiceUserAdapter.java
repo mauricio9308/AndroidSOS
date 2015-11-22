@@ -17,9 +17,15 @@ public class ServiceUserAdapter extends RecyclerView.Adapter<ServiceUserAdapter.
     private AdapterCallback mAdapterCallback;
     private ServiceUser[] mServiceUsers;
 
-    public ServiceUserAdapter( ServiceUser[] serviceUsers, AdapterCallback adapterCallback ){
-        mServiceUsers = serviceUsers;
+    public ServiceUserAdapter( AdapterCallback adapterCallback ){
+        mServiceUsers = null;
         mAdapterCallback = adapterCallback;
+    }
+
+    public void setServiceUsers( ServiceUser[] serviceUsers ){
+        mServiceUsers = serviceUsers;
+
+        notifyDataSetChanged();
     }
 
     @Override
