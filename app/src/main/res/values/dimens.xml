@@ -3,4 +3,9 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Details Fragment -->
+    <dimen name="details_composite_image">24dp</dimen>
+    <dimen name="details_footer_elements_separation">24dp</dimen>
+
 </resources>

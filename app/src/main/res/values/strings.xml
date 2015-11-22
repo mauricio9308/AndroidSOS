@@ -16,9 +16,16 @@
     <string name="title_activity_main">SOS</string>
     <string name="title_activity_get_service">GetServiceActivity</string>
 
+
     <!-- Service activity -->
     <string name="car_service">Ayuda vehicular</string>
     <string name="health_service">Ayuda médica</string>
     <string name="plumber_service">Ayuda fontanería</string>
     <string name="power_service">Ayuda eléctrica</string>
+
+    <string name="comments">Comentarios</string>
+
+
+    <!-- More services activity -->
+    <string name="more_suggestions_services">Más sugerencias</string>
 </resources>

@@ -1,15 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_get_service" tools:context="mx.sos.sos.GetServiceActivity">
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_get_service" tools:context="mx.sos.sos.activity.GetServiceActivity">
 
 
+    <!-- Phone element definition -->
+    <LinearLayout
+        android:id="@+id/container_details_phone"
+        style="@style/SOS_Details_Row"
+        android:background="?selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/mgv_details_hours"
+            style="@style/SOS_ImageView_Details"
+            android:src="@drawable/ic_phone_black_36dp" />
+
+        <!-- Separator -->
+        <View
+            android:id="@+id/separator_phone"
+            style="@style/Separator.Vertical.TransparentGrey.Details" />
+
+        <TextView
+            android:id="@+id/txt_service_phone"
+            android:text="3312321321321321321"
+            style="@style/SOS_TextView_Details" />
+
+    </LinearLayout>
+
+    <!-- Email element definition -->
+    <LinearLayout
+        android:id="@+id/container_details_email"
+        style="@style/SOS_Details_Row"
+        android:background="?selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/mgv_details_email"
+            style="@style/SOS_ImageView_Details"
+            android:src="@drawable/ic_email_black_36dp" />
+
+        <!-- Separator -->
+        <View
+            android:id="@+id/separator_email"
+            style="@style/Separator.Vertical.TransparentGrey.Details" />
+
+        <TextView
+            android:id="@+id/txt_service_email"
+            android:text="mauricio9308@gmail.com"
+            style="@style/SOS_TextView_Details" />
+
+    </LinearLayout>
+
+    <!-- Location element definition -->
+    <LinearLayout
+        android:id="@+id/container_details_location"
+        style="@style/SOS_Details_Row"
+        android:background="?selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/mgv_details_location"
+            style="@style/SOS_ImageView_Details"
+            android:src="@drawable/ic_place_black_36dp" />
+
+        <!-- Separator -->
+        <View
+            android:id="@+id/separator_location"
+            style="@style/Separator.Vertical.TransparentGrey.Details" />
+
+        <TextView
+            android:id="@+id/txt_service_location"
+            android:text="Calle 33 x 54 y 56, #438 Merida Yucatan"
+            style="@style/SOS_TextView_Details" />
+
+    </LinearLayout>
 
 
-</RelativeLayout>
+    <!-- Comments section -->
+    <TextView
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/comments"/>
+
+    <!-- Sample comment definition -->
+    <LinearLayout
+        style="@style/SOS_Details_Row">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:src="@drawable/user_1"
+            style="@style/SOS_ImageView_Details"
+            android:layout_height="48dp"
+            android:layout_width="48dp"
+            android:scaleType="centerCrop"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+
+        <!-- Separator -->
+        <View
+            style="@style/Separator.Vertical.TransparentGrey.Details" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muy buen servicio con una atención" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calificación:" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Sample comment definition -->
+    <LinearLayout
+        style="@style/SOS_Details_Row">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:src="@drawable/user_2"
+            style="@style/SOS_ImageView_Details"
+            android:layout_height="48dp"
+            android:layout_width="48dp"
+            android:scaleType="centerCrop"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+
+        <!-- Separator -->
+        <View
+            style="@style/Separator.Vertical.TransparentGrey.Details" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No me gusto :c (No tiene descuento para Time lords)" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calificación:" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

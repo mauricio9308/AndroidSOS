@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="100"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="mx.sos.sos.MainActivity"
+    tools:context="mx.sos.sos.activity.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <LinearLayout
@@ -27,7 +27,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:background="@color/health"
+                android:background="@drawable/ripple_red"
                 android:src="@drawable/ic_healing_white_48dp"
                 android:foreground="?selectableItemBackground"/>
 
@@ -36,7 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:background="@color/car"
+                android:background="@drawable/ripple_green"
                 android:src="@drawable/ic_directions_car_white_48dp"
                 android:foreground="?selectableItemBackground"/>
 
@@ -61,16 +61,15 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:background="@color/plumber"
-                android:src="@drawable/ic_build_white_48dp"
-                android:foreground="?selectableItemBackground"/>
+                android:background="@drawable/ripple_blue"
+                android:src="@drawable/ic_build_white_48dp"/>
 
             <ImageButton
                 android:id="@+id/btn_power_emergency"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
-                android:background="@color/power"
+                android:background="@drawable/ripple_yellow"
                 android:src="@drawable/ic_power_white_48dp"
                 android:foreground="?selectableItemBackground"/>
 
