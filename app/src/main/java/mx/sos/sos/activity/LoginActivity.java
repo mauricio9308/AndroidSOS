@@ -1,4 +1,4 @@
-package mx.sos.sos;
+package mx.sos.sos.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -30,6 +30,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import mx.sos.sos.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
 

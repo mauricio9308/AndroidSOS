@@ -8,13 +8,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:showIn="@layout/activity_get_service" tools:context="mx.sos.sos.GetServiceActivity">
+    tools:showIn="@layout/activity_get_service" tools:context="mx.sos.sos.activity.GetServiceActivity">
 
 
     <!-- Phone element definition -->
     <LinearLayout
         android:id="@+id/container_details_phone"
-        style="@style/SOS_Details_Row">
+        style="@style/SOS_Details_Row"
+        android:foreground="?selectableItemBackground">
 
         <ImageView
             android:id="@+id/mgv_details_hours"
@@ -36,7 +37,8 @@
     <!-- Email element definition -->
     <LinearLayout
         android:id="@+id/container_details_email"
-        style="@style/SOS_Details_Row">
+        style="@style/SOS_Details_Row"
+        android:foreground="?selectableItemBackground">
 
         <ImageView
             android:id="@+id/mgv_details_email"
@@ -58,7 +60,8 @@
     <!-- Location element definition -->
     <LinearLayout
         android:id="@+id/container_details_location"
-        style="@style/SOS_Details_Row">
+        style="@style/SOS_Details_Row"
+        android:foreground="?selectableItemBackground">
 
         <ImageView
             android:id="@+id/mgv_details_location"
@@ -72,7 +75,7 @@
 
         <TextView
             android:id="@+id/txt_service_location"
-            android:text="3312321321321321321"
+            android:text="Calle 33 x 54 y 56, #438 Merida Yucatan"
             style="@style/SOS_TextView_Details" />
 
     </LinearLayout>
@@ -103,9 +106,50 @@
         <View
             style="@style/Separator.Vertical.TransparentGrey.Details" />
 
-        <TextView
-            android:text="Muy buen servicio con una atención excelente"
-            style="@style/SOS_TextView_Details" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muy buen servicio con una atención" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calificación:" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -127,13 +171,36 @@
         <View
             style="@style/Separator.Vertical.TransparentGrey.Details" />
 
-        <TextView
-            android:text="Muy buen servicio con una atención excelente"
-            style="@style/SOS_TextView_Details" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No me gusto :c (No tiene descuento para Time lords)" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calificación:" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_star_rate_black_18dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>
