@@ -4,6 +4,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -30,8 +31,21 @@ public class GetServiceActivity extends AppCompatActivity {
 
         /* we get the reference of the service identifier */
         int service_id = getServiceIdentifierFromExtra();
-        setActionBarColor( service_id );
-        setActionBarTitle( service_id );
+        int color  = getActionBarColor(service_id);
+        setActionBarTitle(service_id);
+
+        /* setting the action bar color */
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable( color ));
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(true);
+
+        /* setting the colors to the collapsing toolbar layout */
+        CollapsingToolbarLayout collapsingToolbarLayout = ( CollapsingToolbarLayout )
+                findViewById( R.id.collapsing_service_layout );
+        collapsingToolbarLayout.setContentScrimColor( color );
+        collapsingToolbarLayout.setExpandedTitleColor( Color.WHITE );
+        collapsingToolbarLayout.setCollapsedTitleTextColor( Color.WHITE );
     }
 
     private int getServiceIdentifierFromExtra(){
@@ -63,7 +77,7 @@ public class GetServiceActivity extends AppCompatActivity {
         getSupportActionBar().setTitle( title );
     }
 
-    private void setActionBarColor( int service_id ){
+    private int getActionBarColor( int service_id ){
         Resources res = getResources();
         int color = Color.BLACK;
         switch ( service_id ){
@@ -81,9 +95,6 @@ public class GetServiceActivity extends AppCompatActivity {
                 break;
         }
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable( color ));
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(true);
+        return color;
     }
 }
