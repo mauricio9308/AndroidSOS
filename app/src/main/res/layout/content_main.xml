@@ -28,8 +28,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="50"
                 android:background="@drawable/ripple_red"
-                android:src="@drawable/ic_healing_white_48dp"
-                android:foreground="?selectableItemBackground"/>
+                android:src="@drawable/ic_healing_white_48dp"/>
 
             <ImageButton
                 android:id="@+id/btn_car_emergency"
@@ -37,8 +36,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="50"
                 android:background="@drawable/ripple_green"
-                android:src="@drawable/ic_directions_car_white_48dp"
-                android:foreground="?selectableItemBackground"/>
+                android:src="@drawable/ic_directions_car_white_48dp"/>
 
         </LinearLayout>
 
@@ -70,8 +68,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="50"
                 android:background="@drawable/ripple_yellow"
-                android:src="@drawable/ic_power_white_48dp"
-                android:foreground="?selectableItemBackground"/>
+                android:src="@drawable/ic_power_white_48dp"/>
 
         </LinearLayout>
 

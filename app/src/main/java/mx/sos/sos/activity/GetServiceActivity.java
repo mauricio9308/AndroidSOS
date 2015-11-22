@@ -59,6 +59,7 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
         findViewById( R.id.container_details_email ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
         findViewById( R.id.container_details_location ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
         findViewById( R.id.container_details_phone ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
+        findViewById( R.id.details_fab_done ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
     }
 
 
