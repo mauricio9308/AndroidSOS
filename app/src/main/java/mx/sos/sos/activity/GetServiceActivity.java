@@ -53,6 +53,12 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
         collapsingToolbarLayout.setContentScrimColor( color );
         collapsingToolbarLayout.setExpandedTitleColor( Color.WHITE );
         collapsingToolbarLayout.setCollapsedTitleTextColor( Color.WHITE );
+
+
+        /* setting the listener for the layouts */
+        findViewById( R.id.container_details_email ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
+        findViewById( R.id.container_details_location ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
+        findViewById( R.id.container_details_phone ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
     }
 
 
@@ -79,6 +85,17 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick( View view ){
+        if( view.getId()  == R.id.details_fab_done ){
+
+            /* goes to main activity */
+            Intent goToMainActivity = new Intent( GetServiceActivity.this, MainActivity.class );
+            goToMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(goToMainActivity);
+            finish();
+
+            return;
+        }
+
 
         Intent actionIntent;
         switch ( view.getId() ){

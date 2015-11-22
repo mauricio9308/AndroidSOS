@@ -15,7 +15,7 @@
     <LinearLayout
         android:id="@+id/container_details_phone"
         style="@style/SOS_Details_Row"
-        android:foreground="?selectableItemBackground">
+        android:background="?selectableItemBackground">
 
         <ImageView
             android:id="@+id/mgv_details_hours"
@@ -38,7 +38,7 @@
     <LinearLayout
         android:id="@+id/container_details_email"
         style="@style/SOS_Details_Row"
-        android:foreground="?selectableItemBackground">
+        android:background="?selectableItemBackground">
 
         <ImageView
             android:id="@+id/mgv_details_email"
@@ -61,7 +61,7 @@
     <LinearLayout
         android:id="@+id/container_details_location"
         style="@style/SOS_Details_Row"
-        android:foreground="?selectableItemBackground">
+        android:background="?selectableItemBackground">
 
         <ImageView
             android:id="@+id/mgv_details_location"
