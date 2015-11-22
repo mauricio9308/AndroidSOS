@@ -2,7 +2,6 @@ package mx.sos.sos;
 
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
@@ -36,7 +35,7 @@ public class GetServiceActivity extends AppCompatActivity {
 
         /* setting the action bar color */
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable( color ));
+//        actionBar.setBackgroundDrawable(new ColorDrawable( color ));
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayShowTitleEnabled(true);
 

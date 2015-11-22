@@ -21,4 +21,6 @@
     <string name="health_service">Ayuda médica</string>
     <string name="plumber_service">Ayuda fontanería</string>
     <string name="power_service">Ayuda eléctrica</string>
+
+    <string name="comments">Comentarios</string>
 </resources>
