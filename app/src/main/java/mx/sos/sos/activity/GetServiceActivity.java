@@ -11,9 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import mx.sos.sos.R;
 import mx.sos.sos.util.CommonIntents;
+import mx.sos.sos.util.ParseHandler;
 
 public class GetServiceActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -50,15 +52,13 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
         /* setting the colors to the collapsing toolbar layout */
         CollapsingToolbarLayout collapsingToolbarLayout = ( CollapsingToolbarLayout )
                 findViewById( R.id.collapsing_service_layout );
-        collapsingToolbarLayout.setContentScrimColor( color );
-        collapsingToolbarLayout.setExpandedTitleColor( Color.WHITE );
-        collapsingToolbarLayout.setCollapsedTitleTextColor( Color.WHITE );
+        collapsingToolbarLayout.setContentScrimColor(color);
+        collapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
+        collapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
 
 
         /* setting the listener for the layouts */
-        findViewById( R.id.container_details_email ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
         findViewById( R.id.container_details_location ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
-        findViewById( R.id.container_details_phone ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
         findViewById( R.id.details_fab_done ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
     }
 
@@ -88,11 +88,20 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
     public void onClick( View view ){
         if( view.getId()  == R.id.details_fab_done ){
 
-            /* goes to main activity */
-            Intent goToMainActivity = new Intent( GetServiceActivity.this, MainActivity.class );
-            goToMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(goToMainActivity);
-            finish();
+            ParseHandler.sendMessageRequestAssistance( "Mauricio" );
+
+            Toast.makeText( GetServiceActivity.this,
+                    "Se ha mandado la solicitud al prestador", Toast.LENGTH_SHORT ).show();
+
+            /* we publish the review notification */
+//            Notification notification = NotificationSender.buildNotification(GetServiceActivity.this, getString(R.string.app_name), "Es momento de calificar al prestador");
+//            NotificationSender.scheduleNotification( GetServiceActivity.this, notification, 30000);
+
+//            /* goes to main activity */
+//            Intent goToMainActivity = new Intent( GetServiceActivity.this, MainActivity.class );
+//            goToMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(goToMainActivity);
+//            finish();
 
             return;
         }
@@ -100,16 +109,8 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
 
         Intent actionIntent;
         switch ( view.getId() ){
-            case R.id.container_details_phone:
-                //We turn on the dialer
-                actionIntent = CommonIntents.makeDialIntent( GetServiceActivity.this, "9982935500");
-                break;
             case R.id.container_details_location:
                 actionIntent = CommonIntents.searchLocation( GetServiceActivity.this, "Calle 33 x 54 y 56, #438, Merida Yucatan");
-                break;
-            case R.id.container_details_email:
-                actionIntent = CommonIntents.makeSendMailIntent(new String[]{ "mauricio9308@gmail.com"},
-                        "Solicitu de información", "Eviando a través de SOS....");
                 break;
             default:
                 throw new IllegalArgumentException("Invalid view clicked....");

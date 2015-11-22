@@ -10,53 +10,6 @@
     android:orientation="vertical"
     tools:showIn="@layout/activity_get_service" tools:context="mx.sos.sos.activity.GetServiceActivity">
 
-
-    <!-- Phone element definition -->
-    <LinearLayout
-        android:id="@+id/container_details_phone"
-        style="@style/SOS_Details_Row"
-        android:background="?selectableItemBackground">
-
-        <ImageView
-            android:id="@+id/mgv_details_hours"
-            style="@style/SOS_ImageView_Details"
-            android:src="@drawable/ic_phone_black_36dp" />
-
-        <!-- Separator -->
-        <View
-            android:id="@+id/separator_phone"
-            style="@style/Separator.Vertical.TransparentGrey.Details" />
-
-        <TextView
-            android:id="@+id/txt_service_phone"
-            android:text="3312321321321321321"
-            style="@style/SOS_TextView_Details" />
-
-    </LinearLayout>
-
-    <!-- Email element definition -->
-    <LinearLayout
-        android:id="@+id/container_details_email"
-        style="@style/SOS_Details_Row"
-        android:background="?selectableItemBackground">
-
-        <ImageView
-            android:id="@+id/mgv_details_email"
-            style="@style/SOS_ImageView_Details"
-            android:src="@drawable/ic_email_black_36dp" />
-
-        <!-- Separator -->
-        <View
-            android:id="@+id/separator_email"
-            style="@style/Separator.Vertical.TransparentGrey.Details" />
-
-        <TextView
-            android:id="@+id/txt_service_email"
-            android:text="mauricio9308@gmail.com"
-            style="@style/SOS_TextView_Details" />
-
-    </LinearLayout>
-
     <!-- Location element definition -->
     <LinearLayout
         android:id="@+id/container_details_location"
