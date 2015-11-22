@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_notification_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            android:text="Respuesta de rescate"
+            android:textColor="@android:color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/container_details_phone"
+            style="@style/SOS_Details_Row"
+            android:focusableInTouchMode="true"
+            android:clickable="true"
+            android:background="?selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/mgv_details_hours"
+                style="@style/SOS_ImageView_Details"
+                android:src="@drawable/ic_phone_black_36dp" />
+
+            <!-- Separator -->
+            <View
+                android:id="@+id/separator_phone"
+                style="@style/Separator.Vertical.TransparentGrey.Details" />
+
+            <TextView
+                android:id="@+id/txt_service_phone"
+                style="@style/SOS_TextView_Details"
+                android:text="9999047127" />
+
+        </LinearLayout>
+
+        <!-- Email element definition -->
+        <LinearLayout
+            android:id="@+id/container_details_email"
+            style="@style/SOS_Details_Row"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:background="?selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/mgv_details_email"
+                style="@style/SOS_ImageView_Details"
+                android:src="@drawable/ic_email_black_36dp" />
+
+            <!-- Separator -->
+            <View
+                android:id="@+id/separator_email"
+                style="@style/Separator.Vertical.TransparentGrey.Details" />
+
+            <TextView
+                android:id="@+id/txt_service_email"
+                style="@style/SOS_TextView_Details"
+                android:text="torrespjgt@gmail.com" />
+
+        </LinearLayout>
+
+        <TextView
+            android:text="Comentarios:"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"/>
+
+
+        <TextView
+            android:id="@+id/txt_request_response"
+            android:layout_marginTop="8dp"
+            android:text="Se hicieron hicieron hicieron hicieron hicieron hicieron hicieron hicieron hicieron hicieron hicieron "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txt_request_response_was_accepted"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_petition_consumed"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ok"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+</LinearLayout>
+

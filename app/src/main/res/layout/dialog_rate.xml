@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="?attr/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_notification_title"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:text="Calificar a: Dr. Mario"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Comentarios"
+                android:inputType="text"
+                android:maxLines="3"
+                android:singleLine="false" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <TextView
+            android:text="Calificación"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_star_rate_black_18dp" />
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_star_rate_black_18dp" />
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_star_rate_black_18dp" />
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_star_rate_black_18dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_send_comments"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Enviar comentarios"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
