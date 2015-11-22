@@ -46,6 +46,9 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
         mServiceId = getServiceIdentifierFromExtra();
         int color  = getActionBarColor(mServiceId);
         setActionBarTitle(mServiceId);
+
+        /* setting the image */
+        mImageView = ( ImageView ) findViewById( R.id.mgv_details_image );
         setImage( mServiceId );
 
         /* setting the action bar color */
@@ -59,9 +62,6 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
         collapsingToolbarLayout.setContentScrimColor(color);
         collapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
         collapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
-
-
-        mImageView = ( ImageView ) findViewById( R.id.mgv_details_image );
 
         /* setting the listener for the layouts */
         findViewById( R.id.container_details_location ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
