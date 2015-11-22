@@ -10,14 +10,21 @@ public class ServiceUser {
     @SerializedName("id")
     private long mId;
 
+    @SerializedName("email")
+    private String email;
+
+    //TODO FIX THIS NOW
+    @SerializedName("password")
+    private String mPassword;
+
     @SerializedName("name")
     private String mName;
 
-    @SerializedName("adress")
-    private String mAddress;
-
     @SerializedName("phone")
     private String mPhone;
+
+    @SerializedName("adress")
+    private String mAddress;
 
     private int mStars;
     private String mPriceRange;

@@ -44,7 +44,10 @@ public class ServiceUserAdapter extends RecyclerView.Adapter<ServiceUserAdapter.
         /* binding the view holder */
         ServiceUser user = mServiceUsers[ position ];
         holder.txtServiceName.setText( user.getName() );
-        holder.txtPriceRange.setText( user.getPriceRange() );
+
+        if( position < 3 ){
+            holder.txtPromotion.setVisibility( View.VISIBLE );
+        }
 
         /* setting the tag reference for the list element */
         holder.baseView.setTag(R.id.service_user, mServiceUsers[position]);
@@ -65,7 +68,7 @@ public class ServiceUserAdapter extends RecyclerView.Adapter<ServiceUserAdapter.
     public class ServiceViewHolder extends RecyclerView.ViewHolder{
 
         private TextView txtServiceName;
-        private TextView txtPriceRange;
+        private TextView txtPromotion;
         private View baseView;
 
         public ServiceViewHolder( View view ){
@@ -73,7 +76,7 @@ public class ServiceUserAdapter extends RecyclerView.Adapter<ServiceUserAdapter.
 
             baseView = view;
             txtServiceName = ( TextView ) view.findViewById( R.id.txt_service_user_name );
-            txtPriceRange = ( TextView ) view.findViewById( R.id.txt_price_range );
+            txtPromotion = ( TextView ) view.findViewById( R.id.txt_promoted );
         }
     }
 

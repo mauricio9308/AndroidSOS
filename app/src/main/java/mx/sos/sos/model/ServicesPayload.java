@@ -7,11 +7,18 @@ import com.google.gson.annotations.SerializedName;
  */
 public class ServicesPayload {
 
+    @SerializedName("success")
+    private boolean mSuccess;
+
     @SerializedName("model")
     private ServiceUser[] mUsers;
 
     public ServiceUser[] getUsers(){
         return mUsers;
+    }
+
+    public boolean wasSuccessful(){
+        return mSuccess;
     }
 
 

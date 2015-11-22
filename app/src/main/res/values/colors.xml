@@ -12,4 +12,6 @@
     <!-- Transparent grey -->
     <color name="transparent_grey">#80CCCCCC</color>
 
+    <color name="promoted">#c4b04c</color>
+
 </resources>

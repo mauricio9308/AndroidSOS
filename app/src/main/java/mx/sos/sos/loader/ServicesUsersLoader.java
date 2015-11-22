@@ -67,6 +67,11 @@ public class ServicesUsersLoader extends AsyncTaskLoader<ServicesUsersLoader.Ser
                     throw new IllegalStateException("Invalid service id");
             }
 
+            /* error in the server */
+            if( servicesPayload.getUsers() == null ){
+                return new ServicesLoaderResult( new Exception( ) );
+            }
+
             return new ServicesLoaderResult( servicesPayload.getUsers() );
         }catch( RetrofitError e ){
             return new ServicesLoaderResult( new Exception() );
@@ -147,7 +152,7 @@ public class ServicesUsersLoader extends AsyncTaskLoader<ServicesUsersLoader.Ser
         }
 
         public boolean isSuccessful(){
-            return ( mException != null );
+            return ( mException == null );
         }
     }
 }
