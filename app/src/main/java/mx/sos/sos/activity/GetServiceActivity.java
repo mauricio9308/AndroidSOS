@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import mx.sos.sos.R;
@@ -28,6 +29,8 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
     public static final int SERVICE_HEALTH = 3;
     public static final int SERVICE_CAR = 4;
 
+    private ImageView mImageView;
+
     private int mServiceId;
 
     @Override
@@ -43,6 +46,7 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
         mServiceId = getServiceIdentifierFromExtra();
         int color  = getActionBarColor(mServiceId);
         setActionBarTitle(mServiceId);
+        setImage( mServiceId );
 
         /* setting the action bar color */
         ActionBar actionBar = getSupportActionBar();
@@ -56,6 +60,8 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
         collapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
         collapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
 
+
+        mImageView = ( ImageView ) findViewById( R.id.mgv_details_image );
 
         /* setting the listener for the layouts */
         findViewById( R.id.container_details_location ).setOnClickListener( GetServiceActivity.this /* OnClickListener */);
@@ -88,7 +94,7 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
     public void onClick( View view ){
         if( view.getId()  == R.id.details_fab_done ){
 
-            ParseHandler.sendMessageRequestAssistance( "Mauricio" );
+            ParseHandler.sendMessageRequestAssistance("Mauricio");
 
             Toast.makeText( GetServiceActivity.this,
                     "Se ha mandado la solicitud al prestador", Toast.LENGTH_SHORT ).show();
@@ -146,6 +152,26 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
         }
 
         getSupportActionBar().setTitle( title );
+    }
+
+    private void setImage( int service_id ){
+        int resource = R.drawable.plumbers;
+        switch ( service_id ){
+            case SERVICE_CAR:
+                resource = R.drawable.mecanico;
+                break;
+            case SERVICE_HEALTH:
+                resource = R.drawable.medica_1;
+                break;
+            case SERVICE_PLUMBER:
+                resource = R.drawable.plumbers;
+                break;
+           case SERVICE_POWER:
+                resource = R.drawable.electricista;
+                break;
+        }
+
+        mImageView.setImageResource( resource );
     }
 
     private int getActionBarColor( int service_id ){
