@@ -15,10 +15,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import mx.sos.sos.R;
+import mx.sos.sos.fragment.SendRequestFragment;
 import mx.sos.sos.util.CommonIntents;
 import mx.sos.sos.util.ParseHandler;
 
-public class GetServiceActivity extends AppCompatActivity implements View.OnClickListener{
+public class GetServiceActivity extends AppCompatActivity implements View.OnClickListener, SendRequestFragment.SendRequestDialogCallback{
+
+    public static final String FRAG_TAG_SEND_MESSAGE = "FRAG_TAG_SEND_MESSAGE";
 
     public static final String EXTRA_SERVICE_ID = "EXTRA_SERVICE_ID";
 
@@ -91,24 +94,20 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
     }
 
     @Override
+    public void sendMessage(String message) {
+        ParseHandler.sendMessageRequestAssistance("Mauricio", message );
+
+        /* notifying the user of the send*/
+        Toast.makeText(GetServiceActivity.this,
+                "Se ha mandado la solicitud al prestador", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     public void onClick( View view ){
         if( view.getId()  == R.id.details_fab_done ){
-
-            ParseHandler.sendMessageRequestAssistance("Mauricio");
-
-            Toast.makeText( GetServiceActivity.this,
-                    "Se ha mandado la solicitud al prestador", Toast.LENGTH_SHORT ).show();
-
-            /* we publish the review notification */
-//            Notification notification = NotificationSender.buildNotification(GetServiceActivity.this, getString(R.string.app_name), "Es momento de calificar al prestador");
-//            NotificationSender.scheduleNotification( GetServiceActivity.this, notification, 30000);
-
-//            /* goes to main activity */
-//            Intent goToMainActivity = new Intent( GetServiceActivity.this, MainActivity.class );
-//            goToMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(goToMainActivity);
-//            finish();
-
+            /* show the build dialog */
+            SendRequestFragment sendRequestFragment = SendRequestFragment.newInstance();
+            sendRequestFragment.show( getSupportFragmentManager(), FRAG_TAG_SEND_MESSAGE );
             return;
         }
 
@@ -151,7 +150,7 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
                 break;
         }
 
-        getSupportActionBar().setTitle( title );
+        getSupportActionBar().setTitle(title);
     }
 
     private void setImage( int service_id ){
@@ -200,4 +199,6 @@ public class GetServiceActivity extends AppCompatActivity implements View.OnClic
         goToMoreServicesList.putExtra( MoreServicesActivity.EXTRA_SERVICE_ID, service_id );
         startActivity( goToMoreServicesList );
     }
+
+
 }

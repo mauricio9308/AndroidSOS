@@ -38,7 +38,7 @@
             android:layout_marginTop="8dp"
             android:editable="true"
             android:gravity="top|left"
-            android:hint="Comentarios"
+            android:hint="¿Que es lo que necesitas?"
             android:inputType="textMultiLine"
             android:lines="8"
             android:maxLines="10"
@@ -50,8 +50,7 @@
             android:textColorHint="@android:color/black" />
 
         <TextView
-            android:text="Información de petición:"
-            android:textColor="#000000"
+            android:text="Tu información:"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,28 +74,16 @@
         android:layout_marginBottom="8dp">
 
         <Button
-            android:id="@+id/btn_deny_petition"
+            android:id="@+id/send_petition"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
             android:minHeight="48dp"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
-            android:layout_weight="50"
-            android:text="Denegar"
+            android:layout_weight="100"
+            android:text="Enviar"
             android:textColor="@color/colorPrimary"
             android:layout_gravity="top"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btn_accept_petition"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="0dp"
-            android:minHeight="48dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_weight="50"
-            android:text="Aceptar"
-            android:textColor="@color/colorPrimary"
             android:textStyle="bold" />
 
     </LinearLayout>

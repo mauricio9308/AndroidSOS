@@ -42,9 +42,16 @@ public class RequestResponseDialogFragment extends AppCompatDialogFragment imple
 
         TextView wasSuccessful = (TextView) view.findViewById( R.id.txt_request_response_was_accepted );
         if( getFragArgWasSuccessful() ){
+
+            view.findViewById( R.id.container_details_phone ).setOnClickListener( RequestResponseDialogFragment.this );
+            view.findViewById( R.id.container_details_email ).setOnClickListener( RequestResponseDialogFragment.this );
+
             wasSuccessful.setTextColor( getResources().getColor( R.color.plumber ));
             wasSuccessful.setText( "La petición fue aceptada");
         }else{
+            view.findViewById( R.id.container_details_phone ).setVisibility( View.GONE );
+            view.findViewById( R.id.container_details_email ).setVisibility( View.GONE );
+
             wasSuccessful.setTextColor( getResources().getColor( R.color.health ));
             wasSuccessful.setText( "La petición fue denegada");
         }

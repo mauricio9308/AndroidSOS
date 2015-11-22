@@ -61,7 +61,7 @@ public class ParsePushCustomReceiver extends ParsePushBroadcastReceiver {
                     responseIntent = new Intent( context, RequestActivity.class);
                     responseIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     responseIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    responseIntent.putExtra( RequestActivity.EXTRA_MESSAGE, message);
+                    responseIntent.putExtra( RequestActivity.EXTRA_MESSAGE, json.getString("me"));
                     context.startActivity( responseIntent );
                 }
 

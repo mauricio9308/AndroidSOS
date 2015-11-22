@@ -2,14 +2,15 @@ package mx.sos.sos.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialogFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import mx.sos.sos.R;
 
@@ -30,7 +31,6 @@ public class RequestDialogFragment extends AppCompatDialogFragment implements Vi
         RequestDialogFragment requestResponseDialogFragment = new RequestDialogFragment();
         requestResponseDialogFragment.setArguments(args);
         return requestResponseDialogFragment;
-
     }
 
     @Override
@@ -54,6 +54,10 @@ public class RequestDialogFragment extends AppCompatDialogFragment implements Vi
         /* setting the reference for the text view */
         mEditText = ( EditText ) view.findViewById( R.id.comments );
 
+        TextView textRequest = ( TextView ) view.findViewById( R.id.txt_request_response );
+        textRequest.setText("Nombre: Mauricio Lara\nLocalización: UTM Mérida\nMensaje: " + getFragArgMessage() );
+        textRequest.setTextColor(Color.BLACK);
+
         view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         final Dialog dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -65,20 +69,13 @@ public class RequestDialogFragment extends AppCompatDialogFragment implements Vi
         return dialog;
     }
 
-    @Override
-    public void onViewCreated( View view, Bundle savedInstanceState ){
-        super.onViewCreated(view, savedInstanceState);
-}
 
     @Override
     public void onClick( View view ){
         if( mCallback != null ){
-            Log.d("TEST", "CLICKED");
             boolean wasAccepted = ( view.getId() == R.id.btn_accept_petition );
             mCallback.onRequestResolved( mEditText.getText().toString(), wasAccepted );
             dismiss();
-        }else{
-            Log.d("TEST", "CALLBACK NULL");
         }
     }
 

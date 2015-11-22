@@ -38,13 +38,13 @@ public class ParseHandler {
         ParsePush.unsubscribeInBackground( ADMIN_CHANNEL );
     }
 
-    public static void sendMessageRequestAssistance( String user ){
+    public static void sendMessageRequestAssistance( String user, String message ){
         try {
             ParsePush push = new ParsePush();
             ParseQuery pushQuery = ParseInstallation.getQuery();
             pushQuery.whereEqualTo("channels", ADMIN_CHANNEL);
             push.setQuery(pushQuery);
-            JSONObject data = new JSONObject("{\"alert\": \"¡El usuario "+ user +" necesita asistencia!\",\"not_id\": \""+ ID_REQUEST +"\"}");
+            JSONObject data = new JSONObject("{\"alert\": \"¡El usuario "+ user +" necesita asistencia!\",\"not_id\": \""+ ID_REQUEST +"\", \"me\": \""+ message +"\"}");
             push.setData( data );
             push.sendInBackground(new SendCallback() {
                 @Override

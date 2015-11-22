@@ -47,7 +47,7 @@
         <activity
             android:name=".activity.RequestResponseActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/SOS_TransparentActivity" >
         </activity>
 
         <activity

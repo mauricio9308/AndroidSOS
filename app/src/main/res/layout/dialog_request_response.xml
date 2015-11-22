@@ -82,6 +82,20 @@
         </LinearLayout>
 
         <TextView
+            android:text="Remitente:"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"/>
+
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:text="Empresario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:text="Comentarios:"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
